@@ -11,6 +11,7 @@ public class UserOfList {
         // /* Populate the list with elements, but with a small enough
            // number that we expect no invocation of expand().
         // */
+	list.add(true);
         int i = 0;
         for( ; i < 5; i++ ) {
             list.add( -i); // differs from index, but similar
@@ -91,6 +92,7 @@ public class UserOfList {
           + System.lineSeparator()
         );
     }
+
 
     /**
       Test the set() method, reporting and
