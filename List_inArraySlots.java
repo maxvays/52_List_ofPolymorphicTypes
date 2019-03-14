@@ -35,7 +35,7 @@ public class List_inArraySlots {
     */
   public String toString() {
   	String output = "[";
-		for(int i : list) {
+		for(Object i : list) {
 			output += i + ", ";
 		}
 		output += "]";
@@ -90,8 +90,8 @@ public class List_inArraySlots {
     @return old value at @index
     @precondition: @index is within the bounds of this list.
    */
-  public int set(int index, Object newValue) {
-	int oldValue = list[index];
+  public Object set(int index, Object newValue) {
+	Object oldValue = list[index];
 	list[index] = newValue;
 	return oldValue;
   }
