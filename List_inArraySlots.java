@@ -7,7 +7,7 @@ public class List_inArraySlots {
 
     // declare fields here
 
-	private int[] list;
+	private Object[] list;
 	private int numberOfElements;
 
 	private static final int INITIAL_CAPACITY = 10;
@@ -17,7 +17,7 @@ public class List_inArraySlots {
       Construct an empty list with a small initial capacity.
      */
   public List_inArraySlots() {
-		list = new int[INITIAL_CAPACITY];
+	list = new Object[INITIAL_CAPACITY];
   }
 
 
@@ -25,7 +25,7 @@ public class List_inArraySlots {
     @return the number of elements in this list
    */
   public int size() {
-    return numberOfElements;
+  	return numberOfElements;
   }
 
 
@@ -47,7 +47,7 @@ public class List_inArraySlots {
     Appends @value to the end of this list.
     @return true, in keeping with conventions yet to be discussed
    */
-  public boolean add( int value) {
+  public boolean add( Object value) {
     if(numberOfElements == list.length) expand();
     list[numberOfElements++] = value;
 		return true;
@@ -60,7 +60,7 @@ public class List_inArraySlots {
    */
   private void expand() {
       // System.out.println( "expand... (for debugging)");
-  	int[] doubledArray = new int[list.length * 2];
+  	Object[] doubledArray = new Object[list.length * 2];
     for(int i = 0; i < numberOfElements; i++){
       doubledArray[i] = list[i];
     }
@@ -81,8 +81,8 @@ public class List_inArraySlots {
          you should NOT complicate your code to check
          whether user violated the condition.)
    */
-  public int get(int index) {
-		return list[index];
+  public Object get(int index) {
+	return list[index];
   }
 
   /**
@@ -90,10 +90,10 @@ public class List_inArraySlots {
     @return old value at @index
     @precondition: @index is within the bounds of this list.
    */
-  public int set(int index, int newValue) {
-		int oldValue = list[index];
-		list[index] = newValue;
-		return oldValue;
+  public int set(int index, Object newValue) {
+	int oldValue = list[index];
+	list[index] = newValue;
+	return oldValue;
   }
 
   /**
@@ -102,9 +102,9 @@ public class List_inArraySlots {
     decrease the index associated with each).
     @return the value that was removed from the list
   */
-  public int remove (int index) {
-		int oldValue = list[index];
-		int[] newArray = new int[list.length - 1];
+  public Object remove (int index) {
+		Object oldValue = list[index];
+		Object[] newArray = new Object[list.length - 1];
 		for(int i = 0; i < numberOfElements; i++) {
 		    if (i < index) {
 					newArray[i] = list[i];
@@ -124,7 +124,7 @@ public class List_inArraySlots {
     and any subsequent elements to the right
     (that is, increase the index associated with each).
   */
-  public void add( int index, int value) {
+  public void add( int index, Object value) {
   	add(list[numberOfElements - 1]);
 		for(int i = numberOfElements - 2; i > index; i--){
     	list[i] = list[i - 1];
